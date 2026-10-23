@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr" data-theme="violet">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kino — anime kütüphanesi</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%238b5cf6'/><path d='M24 18l22 14-22 14z' fill='white'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>
+window.__hlsCbs = [];
+window.__hlsReady = function(){ window.__hlsCbs.forEach(function(f){f();}); };
+function loadHlsFallback(){
+  var s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js';
+  s.onload = window.__hlsReady;
+  s.onerror = window.__hlsReady;
+  document.head.appendChild(s);
+}
+</script>
+<script src="/vendor/hls.min.js" onerror="this.onerror=null;loadHlsFallback();"></script>
+</head>
+<body>
+<div class="app">
+  <aside id="sidebar">
+    <div class="brand" id="brandBtn">
+      <span class="logo"></span><span class="word">KINO</span>
+    </div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <a class="queue-mini" id="queueMini" href="#/kuyruk"></a>
+      <div class="side-user">
+        <div class="avatar">e</div>
+        <div><b>ege</b><small>yerel profil</small></div>
+        <a href="#/ayarlar" class="icon-btn sm" title="Ayarlar" data-icon="settings"></a>
+      </div>
+    </div>
+  </aside>
+  <div class="main">
+    <header id="topbar">
+      <button id="menuBtn" class="icon-btn only-mobile" title="Menü" data-icon="menu"></button>
+      <form id="globalSearch" class="search" autocomplete="off">
+        <span class="search-ico" data-icon="search"></span>
+        <input id="searchInput" placeholder="Anime, tür, stüdyo ara…" autocomplete="off">
+        <kbd>Ctrl</kbd><kbd>K</kbd>
+      </form>
+      <div class="top-actions">
+        <button id="cmdBtn" class="icon-btn" title="Komut paleti (Ctrl K)" data-icon="command"></button>
+        <a class="icon-btn" href="#/kuyruk" title="İndirme kuyruğu"><span data-icon="download"></span><i class="live-dot" id="queueDot" hidden></i></a>
+      </div>
+    </header>
+    <main id="view"></main>
+  </div>
+</div>
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+<div id="palette" class="palette" hidden>
+  <div class="palette-box">
+    <div class="palette-top">
+      <span data-icon="search"></span>
+      <input id="paletteInput" placeholder="Sayfa, anime veya komut ara…" autocomplete="off">
+      <kbd>esc</kbd>
+    </div>
+    <div id="paletteList" class="palette-list"></div>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> gez</span><span><kbd>↵</kbd> aç</span></div>
+  </div>
+</div>
+<script src="/tracking.js"></script>
+<script src="/ram-player.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
